@@ -27,6 +27,10 @@ const { protect } = require("./middleware/authMiddleware");
 const authMiddleware = protect; // Alias for backward compatibility in this file
 
 // ✅ Register API
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 app.post("/register", async (req, res) => {
   const { name, email, password, role } = req.body;
 
